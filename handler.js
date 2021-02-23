@@ -27,7 +27,7 @@
       ws.close();
     }
 
-    ws = new WebSocket('ws://localhost:8080');
+    ws = new WebSocket('ws://104.198.224.74:8080');
     ws.onopen = () => {
       console.log('Connection opened!');
     }
