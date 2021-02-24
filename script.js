@@ -5,7 +5,7 @@ let pixelWidth = Math.round(canvasWidth / pixelCount);
 let pixelHeight = canvasHeight;
 
 let timing=0.07;
-let waveCount=2;
+let waveCount=5;
 
 let currentPixel = 0;
 let currentContext;
