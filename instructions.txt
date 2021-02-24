@@ -1,0 +1,7 @@
+Extract the file
+open cmd on the folder location
+run npm install
+then npm start
+
+open index.html then remote.html
+press the button and see the changes on index.html page
