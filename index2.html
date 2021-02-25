@@ -38,7 +38,8 @@ let ws;
 		
 		ws.onmessage = ({ data }) => {
 			//handleReq(data);
-			console.log(data)
+			datarec = JSON.parse(data)
+			console.log(datarec)
 			}
 		ws.onclose = function () 	{
 		ws = null;
