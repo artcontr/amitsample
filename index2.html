@@ -16,11 +16,11 @@
 		
 let ws;
 
-  function handleReq(data) {
-    datarec = JSON.parse(data);
+  //function handleReq(data) {
+   //datarec = JSON.parse(data);
     
-    console.log(datarec)
-  }
+    //console.log(data)
+  //}
 		
 		
 		
@@ -36,7 +36,10 @@ let ws;
         console.log('Connection opened!');
     						}
 		
-		ws.onmessage = ({ data }) => handleReq(data);
+		ws.onmessage = ({ data }) => {
+			//handleReq(data);
+			console.log(data)data
+			}
 		ws.onclose = function () 	{
 		ws = null;
     								}
