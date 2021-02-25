@@ -28,6 +28,7 @@
     }
 
     ws = new WebSocket('ws://35.223.101.58:8080');
+	  console.log(ws);
     ws.onopen = () => {
       console.log('Connection opened!');
     }
