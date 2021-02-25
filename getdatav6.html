@@ -1,0 +1,42 @@
+<html>
+ <body>
+  <video id="laVideo" src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-ogv-file.ogv" controls autoplay>Video non supportee</video>
+  <canvas id="leCanvas" width="427" height="240" style="border-style:solid;">Canvas non supportee</canvas>
+ </body>
+ <script>
+ var video = document.getElementById("laVideo");
+ var canvas = document.getElementById("leCanvas");
+ var canvasContext = canvas.getContext("2d");
+ 
+ // la fonction afficherDansCanvas
+var afficherDansCanvas = function() {
+  canvasContext.drawImage(video, 0, 0, 427, 240);
+  setTimeout(afficherDansCanvas, 0); // appel de la fonction toutes les 0 millisecondes
+}
+ // appel de la fonction afficherDansCanvas sur l'événement play de la vidéo
+ video.addEventListener("play", afficherDansCanvas);
+	 
+	 
+	 	function init() {
+		let ws;
+		if (ws) {
+		  ws.onerror = ws.onopen = ws.onclose = null;
+		  ws.close();
+		}
+
+    	ws = new WebSocket('ws://35.223.101.58:8080');
+		
+    	ws.onopen = () => 	{
+     console.log('Connection opened!');
+    						}
+		console.log('test');
+		
+		ws.onmessage = ({ data }) => handleReq(data);
+		ws.onclose = function () 	{
+		ws = null;
+    								}
+  					}
+	
+	init();
+ </script>
+</html>
