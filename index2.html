@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output2</title>
+    
+</head>
+<body>
+
+
+    
+    <script>  
+		
+		
+let ws;
+
+  function handleReq(data) {
+    data = JSON.parse(data);
+    
+    console.log(data)
+  }
+		
+		
+		
+		function init() {
+		if (ws) {
+		  ws.onerror = ws.onopen = ws.onclose = null;
+		  ws.close();
+		}
+
+    	ws = new WebSocket('ws://35.223.101.58:8080');
+		
+    	ws.onopen = () => 	{
+        console.log('Connection opened!');
+    						}
+		
+		ws.onmessage = ({ data }) => handleReq(data);
+		ws.onclose = function () 	{
+		ws = null;
+    								}
+  					}
+	
+	init();
+		
+	</script>
+    
+</body>
+</html>
