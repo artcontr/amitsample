@@ -2,15 +2,15 @@
 <html>
 <body>
 
-<img id="scream" src="testimages/rainbowgif.gif" alt="The Scream" width="220" height="277">
+<img id="rainbow" src="testimages/rainbowgif.gif" alt="The Scream" width="220" height="277">
 <canvas id="myCanvas" width="220" height="277" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 <script>
-document.getElementById("scream").onload = function() {
+document.getElementById("rainbow").onload = function() {
   var c = document.getElementById("myCanvas");
   var ctx = c.getContext("2d");
-  var img = document.getElementById("scream");
+  var img = document.getElementById("rainbow");
   ctx.drawImage(img, 0, 0);
   var imgData = ctx.getImageData(0, 0, c.width, c.height);
   // invert colors
