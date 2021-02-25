@@ -53,7 +53,26 @@
 		  	}; //end of function drawImage
 			
 
-			
+	function init() {
+		if (ws) {
+		  ws.onerror = ws.onopen = ws.onclose = null;
+		  ws.close();
+		}
+
+    	ws = new WebSocket('ws://104.198.224.74:8080');
+		
+    	ws.onopen = () => 	{
+     console.log('Connection opened!');
+    						}
+		console.log('test');
+		
+		ws.onmessage = ({ data }) => handleReq(data);
+		ws.onclose = function () 	{
+		ws = null;
+    								}
+  					}
+	
+	init();
 		  
 
         
