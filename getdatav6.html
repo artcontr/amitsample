@@ -14,9 +14,15 @@ function showincanvas () {
 	var monImageData = canvasContext.getImageData(0, 0, 10, 144);
 	var data = monImageData.data;
 	console.log(data);
-	ws.send("Hello server!");
+	
 
 } 
+	
+	 
+function sendws () {
+	 ws.send(data);
+	 
+		 }
 
 	 
 	 
