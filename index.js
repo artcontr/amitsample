@@ -2,7 +2,7 @@ const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
 
-const port = 35.223.101.58:8080;
+
 const server = http.createServer(express);
 const wss = new WebSocket.Server({ server })
 
@@ -16,6 +16,6 @@ wss.on('connection', function connection(ws) {
   })
 })
 
-server.listen(port, function() {
-  console.log(`Server is listening on ${port}!`)
+server.listen(8080, function() {
+  console.log(`Server is listening !`)
 })
