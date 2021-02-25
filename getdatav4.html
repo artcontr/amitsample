@@ -10,15 +10,10 @@ Your browser does not support the HTML5 canvas tag.
 </canvas>
 
 <script>
+	
 function getPixel(imgData, index) {
   var i = index*4, d = imgData.data;
   return [d[i],d[i+1],d[i+2],d[i+3]] // [R,G,B,A]
-}
-
-// AND/OR
-
-function getPixelXY(imgData, x, y) {
-  return getPixel(imgData, y*imgData.width+x);
 }
 
 
