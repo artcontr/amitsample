@@ -11,7 +11,7 @@
 
 function showincanvas () {
   canvasContext.drawImage(video, -300, -300, 1000, 1000);
-	var monImageData = canvasContext.getImageData(-300, -300, 100, 100);
+	var monImageData = canvasContext.getImageData(0, 0, 1, 1);
 	var data = monImageData.data;
 	console.log(data);
 
