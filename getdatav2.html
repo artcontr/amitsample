@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html>
+  
+	<head>
+		<style>
+			body {
+				margin: 0px;
+				padding: 0px;
+				 }
+		</style>
+	</head>
+  
+	<body>
+		
+		<canvas id="myCanvas" width="10" height="144"></canvas>
+	  
+   		<script>
+			
+			var imageObj = new Image();
+			imageObj.onload = function() {
+				drawImage(this);
+      								     };
+			imageObj.src = 'http://34.122.45.209/amitsample/testimages/10144.jpg';
+			
+			
+			
+			
+			
+			function drawImage(imageObj) {
+				var canvas = document.getElementById('myCanvas');
+				var context = canvas.getContext('2d');
+				var imageX = 0;
+				var imageY = 0;
+				var imageWidth = imageObj.width;
+				var imageHeight = imageObj.height;
+				
+
+        		context.drawImage(imageObj, imageX, imageY);
+				
+				var monImageData = context.getImageData(imageX, imageY, imageWidth, imageHeight);
+				var data = monImageData.data;
+				
+				console.log(data);
+				
+				//var imageData = context.getImageData(imageX, imageY, imageWidth, imageHeight);
+        		//var data = imageData.data;
+				
+					
+				
+			
+				
+				
+		  	}; //end of function drawImage
+			
+
+	function init() {
+		let ws;
+		if (ws) {
+		  ws.onerror = ws.onopen = ws.onclose = null;
+		  ws.close();
+		}
+
+    	ws = new WebSocket('ws://35.223.101.58:8080');
+		
+    	ws.onopen = () => 	{
+     console.log('Connection opened!');
+    						}
+		console.log('test');
+		
+		ws.onmessage = ({ data }) => handleReq(data);
+		ws.onclose = function () 	{
+		ws = null;
+    								}
+  					}
+	
+	init();
+		  
+
+        
+		
+
+
+    </script>
+		
+	</body>
+	
+</html>
