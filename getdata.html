@@ -38,6 +38,9 @@
         		context.drawImage(imageObj, imageX, imageY);
 				
 				var monImageData = context.getImageData(imageX, imageY, imageWidth, imageHeight);
+				var data = imageData.data;
+				
+				console.log(data);
 				
 				//var imageData = context.getImageData(imageX, imageY, imageWidth, imageHeight);
         		//var data = imageData.data;
