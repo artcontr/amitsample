@@ -1,12 +1,10 @@
 let pixelCount = 144;
 let canvasWidth = 144 * 4;
-let canvasHeight = 50;
+let canvasHeight = 10;
 let pixelWidth = Math.round(canvasWidth / pixelCount);
 let pixelHeight = canvasHeight;
-
-let timing=0.01;
-let waveCount=1;
-
+let timing=0.1;
+let waveCount=10;
 let currentPixel = 0;
 let currentContext;
 
