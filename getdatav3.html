@@ -16,22 +16,15 @@ document.getElementById("rainbow").onload = function() {
   ctx.drawImage(img, 0, 0);
   
 	
-	for (i = 0; i < 500; i++) {
-  
-	
+	//for (i = 0; i < 500; i++) {}
 	var imgData = ctx.getImageData(0, 0, c.width, c.height);
-  // invert colors
-  var i;
-  for (i = 0; i < imgData.data.length; i += 4) {
-    imgData.data[i] = 255 - imgData.data[i];
-    imgData.data[i+1] = 255 - imgData.data[i+1];
-    imgData.data[i+2] = 255 - imgData.data[i+2];
-    imgData.data[i+3] = 255;
-  }
+	console.log(imgData);
+  							  
+	
   ctx.putImageData(imgData, 0, 0);
 		
 							}
-};
+
 	
 	
 
