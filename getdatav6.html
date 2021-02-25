@@ -8,13 +8,15 @@
  var canvas = document.getElementById("leCanvas");
  var canvasContext = canvas.getContext("2d");
  
- // la fonction afficherDansCanvas
-var afficherDansCanvas = function() {
+
+function showincanvas () {
   canvasContext.drawImage(video, 0, 0, 427, 240);
-  setTimeout(afficherDansCanvas, 0); // appel de la fonction toutes les 0 millisecondes
-}
- // appel de la fonction afficherDansCanvas sur l'événement play de la vidéo
- video.addEventListener("play", afficherDansCanvas);
+	var monImageData = canvasContext.getImageData(0, 0, 427, 240);
+	var data = monImageData.data;
+	console.log(data);
+
+} 
+
 	 
 	 
 	 	function init() {
@@ -38,5 +40,6 @@ var afficherDansCanvas = function() {
   					}
 	
 	init();
+	 setInterval(showincanvas, 1000);
  </script>
 </html>
