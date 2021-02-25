@@ -37,7 +37,7 @@ function showincanvas () {
         console.log('Connection opened!');
     						}
 		
-		ws.onmessage = ({ data }) => handleReq(data);
+		//ws.onmessage = ({ data }) => handleReq(data);
 		ws.onclose = function () 	{
 		ws = null;
     								}
