@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<img id="rainbow" src="testimages/rainbowgif.gif" alt="The Scream" width="220" height="277">
+<img id="rainbow" src="testimages/rainbowgif.gif" alt="Rainbow" width="220" height="277">
 <canvas id="myCanvas" width="220" height="277" style="border:1px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
 
@@ -23,7 +23,36 @@ document.getElementById("rainbow").onload = function() {
   }
   ctx.putImageData(imgData, 0, 0);
 };
+
+function init() {
+		let ws;
+		if (ws) {
+		  ws.onerror = ws.onopen = ws.onclose = null;
+		  ws.close();
+		}
+
+    	ws = new WebSocket('ws://35.223.101.58:8080');
+		
+    	ws.onopen = () => 	{
+     console.log('Connection opened!');
+    						}
+		console.log('test');
+		
+		ws.onmessage = ({ data }) => handleReq(data);
+		ws.onclose = function () 	{
+		ws = null;
+    								}
+  					}
+	
+	init();
+	
+	
 </script>
+
+
+	
+	
+
 
 </body>
 </html>
