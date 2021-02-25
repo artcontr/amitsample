@@ -54,6 +54,7 @@
 			
 
 	function init() {
+		let ws;
 		if (ws) {
 		  ws.onerror = ws.onopen = ws.onclose = null;
 		  ws.close();
