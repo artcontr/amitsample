@@ -7,12 +7,19 @@
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 <script>
+	
+	
 document.getElementById("rainbow").onload = function() {
   var c = document.getElementById("myCanvas");
   var ctx = c.getContext("2d");
   var img = document.getElementById("rainbow");
   ctx.drawImage(img, 0, 0);
-  var imgData = ctx.getImageData(0, 0, c.width, c.height);
+  
+	
+	for (i = 0; i < 500; i++) {
+  
+	
+	var imgData = ctx.getImageData(0, 0, c.width, c.height);
   // invert colors
   var i;
   for (i = 0; i < imgData.data.length; i += 4) {
@@ -22,7 +29,11 @@ document.getElementById("rainbow").onload = function() {
     imgData.data[i+3] = 255;
   }
   ctx.putImageData(imgData, 0, 0);
+		
+							}
 };
+	
+	
 
 function init() {
 		let ws;
@@ -36,7 +47,7 @@ function init() {
     	ws.onopen = () => 	{
      console.log('Connection opened!');
     						}
-		console.log('test');
+		
 		
 		ws.onmessage = ({ data }) => handleReq(data);
 		ws.onclose = function () 	{
