@@ -1,0 +1,46 @@
+<html>
+<body>
+
+<p>Image to use:</p>
+<img id="scream" width="230" height="60" src="testimages/rainbowgif.gif" alt="The Scream">
+
+<p>Canvas:</p>
+<canvas id="myCanvas" width="230" height="60" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script>
+function getPixel(imgData, index) {
+  var i = index*4, d = imgData.data;
+  return [d[i],d[i+1],d[i+2],d[i+3]] // [R,G,B,A]
+}
+
+// AND/OR
+
+function getPixelXY(imgData, x, y) {
+  return getPixel(imgData, y*imgData.width+x);
+}
+
+
+function() {
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    //draw on canvas
+    var img = document.getElementById("scream");
+    ctx.drawImage(img,10,10,50,50);//,0,0);// c.width,c.height);
+    //ctx.fillStyle = "red";
+    //ctx.fillRect(10, 10, 50, 50);
+
+    //get image data
+    alert("h");
+     var imgData = ctx.getImageData(10, 10, 50, 50);
+    alert("h2");
+    // The magic®
+    //getPixel(idt, 852);  // returns array [red, green, blue, alpha]
+    alert("p:"+getPixelXY(idt,1,1)[0]); // same pixel using x,y
+}
+</script>
+
+</body>
+</html>
