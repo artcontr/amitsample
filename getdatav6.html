@@ -7,6 +7,7 @@
  var video = document.getElementById("laVideo");
  var canvas = document.getElementById("leCanvas");
  var canvasContext = canvas.getContext("2d");
+ let ws;
  
 
 function showincanvas () {
@@ -14,20 +15,17 @@ function showincanvas () {
 	var monImageData = canvasContext.getImageData(0, 0, 10, 144);
 	var data = monImageData.data;
 	console.log(data);
+	ws.send(data);
+	
 	
 
 } 
 	
-	 
-function sendws () {
-	 ws.send(data);
-	 
-		 }
+
 
 	 
 	 
 	 	function init() {
-		let ws;
 		if (ws) {
 		  ws.onerror = ws.onopen = ws.onclose = null;
 		  ws.close();
@@ -36,9 +34,8 @@ function sendws () {
     	ws = new WebSocket('ws://35.223.101.58:8080');
 		
     	ws.onopen = () => 	{
-     console.log('Connection opened!');
+        console.log('Connection opened!');
     						}
-		console.log('test');
 		
 		ws.onmessage = ({ data }) => handleReq(data);
 		ws.onclose = function () 	{
