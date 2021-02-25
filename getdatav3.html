@@ -22,7 +22,8 @@ function drawimg() {
 	
 function getImageData() {
   
-	
+	var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
 	var imgData = ctx.getImageData(0, 0, c.width, c.height);
 	console.log(imgData);
 	
