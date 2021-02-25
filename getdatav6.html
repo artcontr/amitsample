@@ -14,8 +14,10 @@ function showincanvas () {
   canvasContext.drawImage(video, -300, -300, 1000, 1000);
 	var monImageData = canvasContext.getImageData(0, 0, 10, 144);
 	var data = monImageData.data;
-	console.log(data);
-	ws.send(data);
+	
+	var datajson = JSON.stringify(data);
+	console.log(datajson);
+	ws.send(datajson);
 	
 	
 
